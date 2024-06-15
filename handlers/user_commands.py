@@ -51,7 +51,7 @@ async def command_start_handler(message: Message, bot: Bot) -> None:
 # @router.message(Command("referrals"))
 async def message_handler(message: Message) -> None:
     total_refs = get_referral_count(table_name, message.from_user.id)
-    await message.answer(f"total referrals: {total_refs}.\nyour referral link:\n{html.code(str(bot_name) + "?start=" + str(message.from_user.id))}")
+    await message.answer(f"total referrals: {total_refs}.\nyour referral link:\n{html.code(str(bot_name) + '?start=' + str(message.from_user.id))}")
 
 
 @router.message(F.text.lower() == "balance")
